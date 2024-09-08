@@ -1,11 +1,12 @@
 .header {
   padding: 10px 0;
-  background-color: #8d8de8;
+  background-color: #646cff;
 }
 
 .form {
+  display: flex;
+  justify-content: space-between;
   width: 380px;
-  padding: 0 10px;
   margin: 0 auto;
   text-align: center;
   background-color: #ffffff;
@@ -14,10 +15,20 @@
 
 .searchInput {
   width: 300px;
+  padding-left: 20px;
+  padding: 12px 0 12px 20px;
   border: transparent;
   outline: transparent;
+  border-radius: 8px;
 }
 
 .btn {
+  font-size: 16px;
   color: #757575;
+  background-color: #ffffff;
+}
+
+.btn:hover {
+  font-size: 18px;
+  color: #3942f3;
 }

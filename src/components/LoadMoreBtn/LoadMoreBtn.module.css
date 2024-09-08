@@ -1,0 +1,11 @@
+.loadMoreBtn {
+  display: block;
+  margin: 0 auto;
+  color: #ffffff;
+  background-color: #646cff;
+  transition: background-color 250ms;
+}
+
+.loadMoreBtn:hover {
+  background-color: #5b63fb;
+}

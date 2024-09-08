@@ -30,21 +30,16 @@ h1 {
 }
 
 button {
+  display: block;
   border-radius: 8px;
   border: transparent;
   padding: 8px 20px;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 700;
   font-family: inherit;
-  background-color: #ffffff;
-  color: #1a1a1a;
   cursor: pointer;
-  transition: background-color 250ms;
 }
-button:hover {
-  /* box-shadow: rgb(172, 176, 246) 0px 2px 8px 0px; */
-  /* background-color: #acb0f6; */
-}
+
 button:focus,
 button:focus-visible {
   outline: transparent;
