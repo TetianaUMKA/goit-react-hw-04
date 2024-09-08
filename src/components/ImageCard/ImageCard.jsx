@@ -1,3 +1,5 @@
+import css from "./ImageCard.module.css";
+
 export default function ImageCard({
   image: {
     likes,
@@ -7,10 +9,10 @@ export default function ImageCard({
   },
 }) {
   return (
-    <div>
-      <img src={small} alt={alt_description} />
-      <p>{description ? description : "Good picture"}</p>
-      <p>👍 {likes}</p>
+    <div className={css.container}>
+      <img className={css.img} src={small} alt={alt_description} />
+      {/* <p>{description ? description : "Good picture"}</p> */}
+      <p className={css.likes}>👍 {likes}</p>
     </div>
   );
 }

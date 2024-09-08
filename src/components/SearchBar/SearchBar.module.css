@@ -1,0 +1,23 @@
+.header {
+  padding: 10px 0;
+  background-color: #8d8de8;
+}
+
+.form {
+  width: 380px;
+  padding: 0 10px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.searchInput {
+  width: 300px;
+  border: transparent;
+  outline: transparent;
+}
+
+.btn {
+  color: #757575;
+}

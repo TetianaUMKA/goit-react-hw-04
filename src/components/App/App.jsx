@@ -10,7 +10,6 @@ function App() {
 
   const handleSearch = (newQuery) => {
     setQuery(newQuery);
-    console.log(query);
   };
 
   useEffect(() => {
