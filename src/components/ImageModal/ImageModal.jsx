@@ -1,5 +1,7 @@
 import Modal from "react-modal";
 
+import css from "./ImageModal.module.css";
+
 const customStyles = {
   content: {
     top: "50%",
@@ -23,6 +25,7 @@ export default function ImageModal({
       isOpen={modalIsOpen}
       onRequestClose={onCloseModal}
       style={customStyles}
+      overlayClassName={css.Overlay}
     >
       <img src={dataForModal.src} alt={dataForModal.alt} />
       <p>
