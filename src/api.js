@@ -12,5 +12,9 @@ export const fetchPhotos = async (query, page) => {
       },
     }
   );
-  return response.data;
+
+  return {
+    result: response.data.results,
+    totalPages: response.data.total_pages,
+  };
 };

@@ -32,10 +32,8 @@ function App() {
         setGallery([]);
         setError(false);
         const fetchedPhotos = await fetchPhotos(query, page);
-        setGallery(fetchedPhotos.results);
-        console.log(fetchedPhotos);
-        console.log(fetchedPhotos.total_pages);
-        setTotalPages(fetchedPhotos.total_pages);
+        setGallery((prev) => [...prev, ...fetchedPhotos.result]);
+        setTotalPages(fetchedPhotos.totalPages);
       } catch (error) {
         console.log(error);
         setError(true);
@@ -75,7 +73,7 @@ function App() {
           getDataForModal={getDataForModal}
         />
       )}
-      {page < totalPages && <LoadMoreBtn onChangePage={loadMore} />}
+      {totalPages > page && <LoadMoreBtn onChangePage={loadMore} />}
       <ImageModal
         modalIsOpen={modalIsOpen}
         onCloseModal={closeModal}
