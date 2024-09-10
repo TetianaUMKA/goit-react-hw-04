@@ -26,7 +26,8 @@ export default function ImageModal({
     >
       <img src={dataForModal.src} alt={dataForModal.alt} />
       <p>
-        {(dataForModal.description, dataForModal.author, dataForModal.location)}
+        {dataForModal.description} / {dataForModal.author} /{" "}
+        {dataForModal.location}
       </p>
       <p></p>
     </Modal>
