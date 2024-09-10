@@ -8,6 +8,7 @@ export const fetchPhotos = async (query, page) => {
         query,
         page,
         per_page: 12,
+        orientation: "landscape",
       },
     }
   );

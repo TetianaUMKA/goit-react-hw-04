@@ -6,6 +6,7 @@ import ImageGallery from "../ImageGallery/ImageGallery";
 import Loader from "../Loader/Loader";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
+import ImageModal from "../ImageModal/ImageModal";
 
 function App() {
   const [query, setQuery] = useState("");
@@ -14,6 +15,8 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [totalPages, setTotalPages] = useState(1);
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [dataForModal, setDataForModal] = useState({});
 
   const handleSearch = (newQuery) => {
     setQuery(newQuery);
@@ -47,13 +50,37 @@ function App() {
     setPage(page + 1);
   };
 
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function getDataForModal(data) {
+    setDataForModal(data);
+    console.log(data);
+  }
+
   return (
     <>
       <SearchBar onSearch={handleSearch} />
       {loading && <Loader />}
       {error && <ErrorMessage />}
-      {gallery.length > 0 && <ImageGallery images={gallery} />}
+      {gallery.length > 0 && (
+        <ImageGallery
+          images={gallery}
+          onOpenModal={openModal}
+          getDataForModal={getDataForModal}
+        />
+      )}
       {page < totalPages && <LoadMoreBtn onChangePage={loadMore} />}
+      <ImageModal
+        modalIsOpen={modalIsOpen}
+        onCloseModal={closeModal}
+        dataForModal={dataForModal}
+      />
     </>
   );
 }
