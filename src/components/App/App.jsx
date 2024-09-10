@@ -19,6 +19,8 @@ function App() {
   const [dataForModal, setDataForModal] = useState({});
 
   const handleSearch = (newQuery) => {
+    setGallery([]);
+    setPage(1);
     setQuery(newQuery);
   };
 
@@ -29,7 +31,6 @@ function App() {
     async function getImages() {
       try {
         setLoading(true);
-        setGallery([]);
         setError(false);
         const fetchedPhotos = await fetchPhotos(query, page);
         setGallery((prev) => [...prev, ...fetchedPhotos.result]);
